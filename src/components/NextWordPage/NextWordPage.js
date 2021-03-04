@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import LanguageApiService from '../../services/language-api-service';
 
 class NextWordPage extends Component {
   render() {
