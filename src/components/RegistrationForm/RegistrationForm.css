@@ -1,0 +1,50 @@
+.input__label {
+  display: flex;
+  flex-direction: column;
+}
+
+.registration__input {
+  height: 3.5rem;
+  /* background: transparent; */
+  background-color: #fff;
+  border: solid 0.1rem;
+  border-radius: 1.3rem;
+  padding: 8px 16px;
+  cursor: text;
+  font-size: 120%;
+  color: black;
+  /* border-color: black; */
+  margin-bottom: 0.5rem;
+}
+
+.registration__form {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: auto;
+}
+
+.form__label {
+  color: #fff;
+  text-transform: capitalize;
+  font-size: 120%;
+}
+
+.form__footer {
+  display: flex;
+  flex-direction: column;
+}
+.form__submit {
+  height: 3rem;
+  border-radius: 1.3rem;
+  margin: 0.5rem 0;
+  font-size: 120%;
+  cursor: pointer;
+}
+
+.returning__user {
+  font-size: 120%;
+  color: white;
+  text-decoration: none;
+  margin-top: 0.5rem;
+}

@@ -1,0 +1,132 @@
+.header__link {
+  text-decoration: none;
+  color: white;
+  text-transform: lowercase;
+}
+
+.header__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 2rem;
+  background-color: #235390;
+}
+
+.header__title {
+  margin: 0 0 0 2rem;
+  font-weight: 900;
+}
+
+.nav__links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2.5rem;
+  width: 80%;
+  margin: auto;
+}
+
+.login__link {
+  background-color: #58cc02;
+  color: #fff;
+  padding: 1rem;
+  font-size: 130%;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 1.3rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  border-width: 0 0 4px 0;
+  /* border-color: transparent; */
+  /* border-top-left-radius: 18px; */
+  /* border-top-right-radius: 18px; */
+  border-style: solid;
+  transform: translateZ(0);
+  border-color: #58a700;
+}
+
+.register__link {
+  border: solid 1px black;
+  border-width: 2px 2px 4px 2px;
+  background-color: #235390;
+  color: #fff;
+  padding: 1rem;
+  font-size: 130%;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 1.3rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.registration__option {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: #fff;
+}
+
+.spaced {
+  letter-spacing: 0.5rem;
+}
+
+.logged__in {
+  display: flex;
+  justify-content: right;
+  flex-direction: column;
+  text-align: right;
+  padding: 0.5rem 1rem;
+  font-size: 120%;
+}
+
+.user__logged__in {
+  color: #fff;
+  font-style: none;
+  text-transform: capitalize;
+}
+.login__form {
+  background-color: #235390;
+}
+.logout__link {
+  color: #fff;
+  cursor: pointer;
+}
+
+.logout__link:hover {
+  color: #58a700;
+}
+
+.tagline {
+  font-size: 150%;
+  color: #fff;
+  text-align: center;
+  padding-top: 3rem;
+}
+
+@media all and (min-width: 900px) {
+  .login__route {
+    display: flex;
+  }
+
+  .tagline {
+    font-size: 200%;
+    margin: 0;
+    padding-top: 4rem;
+    width: 50vh;
+    text-align: center;
+  }
+
+  .nav__links {
+    width: 50vh;
+    margin: 0;
+  }
+
+  .login__route {
+    display: flex;
+    justify-content: space-around;
+    padding: 10rem 0;
+  }
+}

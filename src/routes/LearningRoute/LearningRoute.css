@@ -1,0 +1,96 @@
+.learning__page {
+  padding: 1rem;
+  background-color: #fff;
+  color: #3c3c3c;
+  font-size: 120%;
+  min-height: 84vh;
+}
+
+.next__word__header {
+  margin: 0;
+  padding: 2rem 0.5rem 2rem 0.5rem;
+  font-size: 160%;
+  text-align: center;
+}
+
+.next__word__value {
+  /* margin: 0; */
+  padding: 0 0.5rem;
+  font-size: 220%;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+}
+
+.DisplayFeedback {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding: 1rem 0;
+}
+.feedback {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 150%;
+}
+.current__word {
+  /* font-size: 110%; */
+  font-weight: bold;
+}
+.correct__text {
+  color: green;
+  font-weight: bold;
+  font-size: 130%;
+}
+.incorrect__text {
+  color: red;
+  font-weight: bold;
+  font-size: 130%;
+}
+
+.next__word__button {
+  padding: 0.6rem;
+  border-radius: 1.3rem;
+  height: 3.5rem;
+  font-size: 120%;
+}
+.quiz__form {
+  padding: 2rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.learn__guess__input__label {
+  font-size: 150%;
+}
+
+.learn-guess-input {
+  height: 3.5rem;
+  border: solid 0.1rem;
+  border-radius: 1.3rem;
+  padding: 8px 16px;
+  cursor: text;
+  font-size: 120%;
+  color: black;
+  margin-bottom: 0.5rem;
+}
+
+.submit__answer {
+  padding: 0.6rem;
+  border-radius: 1.3rem;
+  height: 3.5rem;
+  font-size: 120%;
+}
+
+.word__stats {
+  padding-left: 0.5rem;
+  margin-top: 0;
+  font-size: 120%;
+}
+
+.stat__target {
+  font-weight: 900;
+}
