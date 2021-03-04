@@ -9,6 +9,8 @@ class LearningRoute extends Component {
   state = {
     userResponse: '',
     feedback: false,
+    previousIncorrectCount: 0,
+    previousCorrectCount: 0,
   };
   // constructor(props) {
   //   super(props);
@@ -19,6 +21,7 @@ class LearningRoute extends Component {
     this.context.clearError();
     LanguageApiService.getNextWord()
       .then(res => {
+        console.log('component mounting');
         this.context.setNextWord(res.nextWord);
         this.context.setTotalScore(res.totalScore);
         this.context.setWordCorrectCount(res.wordCorrectCount);
@@ -36,20 +39,34 @@ class LearningRoute extends Component {
   handleSubmitAnswer = evt => {
     evt.preventDefault();
     const guess = { guess: this.state.userResponse };
-    this.context.setPreviousWord(this.context.nextWord);
-    LanguageApiService.postGuess(guess)
+    LanguageApiService.getNextWord()
       .then(res => {
-        this.context.clearError();
-        this.setState({ feedback: true });
-        this.context.setIsCorrect(res.isCorrect);
-        this.context.setNextWord(res.nextWord);
-        this.context.setTotalScore(res.totalScore);
-        this.context.setWordCorrectCount(res.wordCorrectCount);
-        this.context.setWordIncorrectCount(res.wordIncorrectCount);
-        this.context.setAnswer(res.answer);
-        this.context.setGuess(this.state.userResponse);
+        this.context.setPreviousWord(res.nextWord);
+        this.setState({ previousCorrectCount: res.wordCorrectCount });
+        this.setState({ previousIncorrectCount: res.wordIncorrectCount });
+        console.log(this.state.previousCorrectCount, 'PREVIOUS CC');
+        console.log(this.state.previousIncorrectCount, 'PREVIOUS ICC');
+        // console.log(res, 'RES FOR OUR GET');
       })
-      .catch(this.context.errror);
+      .catch(this.context.setError)
+      .then(
+        // this.context.setPreviousWord(this.context.nextWord);
+        // console.log(this.context.previousWord, 'PREVIOUS WORD');
+        LanguageApiService.postGuess(guess)
+          .then(res => {
+            console.log(res);
+            this.context.clearError();
+            this.setState({ feedback: true });
+            this.context.setIsCorrect(res.isCorrect);
+            this.context.setNextWord(res.nextWord);
+            this.context.setTotalScore(res.totalScore);
+            this.context.setWordCorrectCount(res.wordCorrectCount);
+            this.context.setWordIncorrectCount(res.wordIncorrectCount);
+            this.context.setAnswer(res.answer);
+            this.context.setGuess(this.state.userResponse);
+          })
+          .catch(this.context.errror)
+      );
   };
 
   handleNextWord = evt => {
@@ -65,8 +82,8 @@ class LearningRoute extends Component {
           guess={this.context.guess}
           answer={this.context.answer}
           totalScore={this.context.totalScore}
-          wordCorrectCount={this.context.wordCorrectCount}
-          wordIncorrectCount={this.context.wordIncorrectCount}
+          previousCorrectCount={this.state.previousCorrectCount}
+          previousIncorrectCount={this.state.previousIncorrectCount}
           isCorrect={this.context.isCorrect}
           previousWord={this.context.previousWord}
           handleNextWord={this.handleNextWord}

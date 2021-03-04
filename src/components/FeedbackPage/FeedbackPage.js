@@ -6,12 +6,17 @@ class FeedbackPage extends Component {
       guess,
       answer,
       totalScore,
-      wordCorrectCount,
-      wordIncorrectCount,
+      previousCorrectCount,
+      previousIncorrectCount,
       isCorrect,
       previousWord,
       handleNextWord,
     } = this.props;
+    let newCorrect = previousCorrectCount;
+    let newIncorrect = previousIncorrectCount;
+    isCorrect === true ? (newCorrect += 1) : (newIncorrect += 1);
+    console.log(previousCorrectCount, 'PREVIOUS WORD CORRECT COUNT');
+    console.log(previousIncorrectCount, 'PREVIOUS WORD INCORRECT COUNT');
     return (
       <div className="next__word__page">
         <h2 className="next__word__header">
@@ -49,11 +54,11 @@ class FeedbackPage extends Component {
           </div>
           <p className="word__stats">
             You have answered this word correctly{' '}
-            <span className="stat__target">{wordCorrectCount}</span> times.
+            <span className="stat__target">{newCorrect}</span> times.
           </p>
           <p className="word__stats">
             You have answered this word incorrectly{' '}
-            <span className="stat__target">{wordIncorrectCount}</span> times.
+            <span className="stat__target">{newIncorrect}</span> times.
           </p>
         </div>
       </div>
