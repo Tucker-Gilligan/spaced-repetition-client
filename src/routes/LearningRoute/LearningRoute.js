@@ -21,7 +21,6 @@ class LearningRoute extends Component {
     this.context.clearError();
     LanguageApiService.getNextWord()
       .then(res => {
-        console.log('component mounting');
         this.context.setNextWord(res.nextWord);
         this.context.setTotalScore(res.totalScore);
         this.context.setWordCorrectCount(res.wordCorrectCount);
@@ -44,17 +43,11 @@ class LearningRoute extends Component {
         this.context.setPreviousWord(res.nextWord);
         this.setState({ previousCorrectCount: res.wordCorrectCount });
         this.setState({ previousIncorrectCount: res.wordIncorrectCount });
-        console.log(this.state.previousCorrectCount, 'PREVIOUS CC');
-        console.log(this.state.previousIncorrectCount, 'PREVIOUS ICC');
-        // console.log(res, 'RES FOR OUR GET');
       })
       .catch(this.context.setError)
       .then(
-        // this.context.setPreviousWord(this.context.nextWord);
-        // console.log(this.context.previousWord, 'PREVIOUS WORD');
         LanguageApiService.postGuess(guess)
           .then(res => {
-            console.log(res);
             this.context.clearError();
             this.setState({ feedback: true });
             this.context.setIsCorrect(res.isCorrect);

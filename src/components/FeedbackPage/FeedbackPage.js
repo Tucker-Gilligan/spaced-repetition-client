@@ -15,8 +15,6 @@ class FeedbackPage extends Component {
     let newCorrect = previousCorrectCount;
     let newIncorrect = previousIncorrectCount;
     isCorrect === true ? (newCorrect += 1) : (newIncorrect += 1);
-    console.log(previousCorrectCount, 'PREVIOUS WORD CORRECT COUNT');
-    console.log(previousIncorrectCount, 'PREVIOUS WORD INCORRECT COUNT');
     return (
       <div className="next__word__page">
         <h2 className="next__word__header">
