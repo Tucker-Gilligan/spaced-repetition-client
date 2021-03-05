@@ -1,47 +1,71 @@
-# Spaced Repetition Capstone
+# Spaced Repetition Client!
+## Links
+- Live Deployment: https://spaced-repetition-tucker.vercel.app/register
+- Server Repository: https://github.com/Tucker-Gilligan/spaced-repetition-server
+- Client Repository: https://github.com/Tucker-Gilligan/spaced-repetition-client
 
-## Setup
+## Summary
 
-To setup the application
+This is a language learning application using the Spaced Repetition learning technique!
 
-1. Fork and clone the project to your machine
-2. `npm install`. This will also install the application *Cypress.io* for running browser integration tests
+## User Stories
 
-The project expects you have the Spaced repetition API project setup and running on http://localhost:8000.
+#### Landing Page
+- Users start off on a landing page, where they are provided with the options to login or register
 
-Find instructions to setup the API here https://github.com/Thinkful-Ed/spaced-repetition-api.
+<img src="https://user-images.githubusercontent.com/72029209/110063754-bd737380-7d39-11eb-9fd2-880f6e7e7472.png" alt="login page" width="200px">
+<img src="https://user-images.githubusercontent.com/72029209/110064478-2ad3d400-7d3b-11eb-8e32-1c5f4c126af9.png" alt="registration page" width="200px">
 
-## Running project
 
-This is a `create-react-app` project so `npm start` will start the project in development mode with hot reloading by default.
+#### Dashboard
 
-## Running the tests
+- On login - users are directed to their dashboard which displays their language, and a list of words to learn.
+- Users can see their total score
+- Users can see their incorrect count and correct count for each word
 
-This project uses [Cypress IO](https://docs.cypress.io) for integration testing using the Chrome browser.
+<img src="https://user-images.githubusercontent.com/72029209/110063756-be0c0a00-7d39-11eb-9f78-63addc5de556.png" alt="Dashboard" width="200px" />
 
-Cypress has the following expectations:
 
-- You have cypress installed (this is a devDependency of the project)
-- You have your application running at http://localhost:3000.
-  - You can change the address of this expectation in the `./cypress.json` file.
-- Your `./src/config.js` is using http://localhost:8000/api as the `API_ENDPOINT`
 
-To start the tests run the command:
+#### Learn Page
 
-```bash
-npm run cypress:open
-```
+- Users are shown one word at a time, and provided a prompt to submit their answer for the translation
+- Users can see their total score
+- Users can see the number of times they have answered the current word correctly and incorrectly
 
-On the first run of this command, the cypress application will verify its install. Any other runs after this, the verification will be skipped.
+<img src="https://user-images.githubusercontent.com/72029209/110063757-be0c0a00-7d39-11eb-9747-65ea4662ca7d.png" alt="Learning Route" width="200px" />
 
-The command will open up the Cypress application which reads tests from the `./cypress/integration/` directory. You can then run individual tests by clicking on the file names or run all tests by clicking the "run all tests" button in the cypress GUI.
 
-Tests will assert against your running localhost client application.
+#### Feedback Page
+- After posting a guess, users are directed to a feedback page
+###### On the feedback page users can see
+- The word they were asked to translate
+- The correct translation
+- Their guess
+- Feedback regarding if their guess was correct or incorrect
+- New total score
+- New correct answer count for that word
+- New incorrect answer count for that word
 
-You can also start all of the tests in the command line only (not using the GUI) by running the command:
+<img src="https://user-images.githubusercontent.com/72029209/110063761-be0c0a00-7d39-11eb-9fc4-0eeff67a6a4a.png" alt="Feedback Page" width="200px" />
 
-```bash
-npm run cypress:run
-```
+## Technology Used
 
-This will save video recordings of the test runs in the directory `./cypress/videos/`.
+### Client:
+
+- ReactJS
+- react-router-dom for routing and in-app navigation
+- CSS (vanilla CSS)
+- Babel
+- Webpack
+- Vercel for deployment
+- Cypress for testing
+
+### Backend:
+
+- Express for handling API requests
+- NodeJS for interacting with the file system
+- Postgrator for database migration
+- Mocha, Chai, Supertest for endpoints testing
+- Knex.js for interfacing with PostgreSQL database
+- Heroku for database and server deployment
