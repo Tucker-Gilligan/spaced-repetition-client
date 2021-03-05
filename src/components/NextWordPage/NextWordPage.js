@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-
+import LearnContext from '../../contexts/LearnContext';
 class NextWordPage extends Component {
+  static contextType = LearnContext;
   render() {
     let {
       nextWord,
@@ -11,6 +12,10 @@ class NextWordPage extends Component {
       handleSubmitAnswer,
       handleChange,
     } = this.props;
+
+    // let { previousWord = '', nextWord = '', totalScore = 0 } = this.context;
+
+    console.log(this.context.previousWord, 'GETTIN THAT CONTEXT');
     return (
       <div className="next__word__page">
         <h2 className="next__word__header">Translate the word:</h2>
