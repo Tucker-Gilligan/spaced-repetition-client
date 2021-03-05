@@ -48,3 +48,8 @@
   text-decoration: none;
   margin-top: 0.5rem;
 }
+
+.error__container {
+  color: #fff;
+  font-size: 120%;
+}
