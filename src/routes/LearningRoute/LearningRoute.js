@@ -12,10 +12,6 @@ class LearningRoute extends Component {
     previousIncorrectCount: 0,
     previousCorrectCount: 0,
   };
-  // constructor(props) {
-  //   super(props);
-  //   this.handleSubmitAnswer = this.handleSubmitAnswer.bind(this);
-  // }
 
   componentDidMount() {
     this.context.clearError();
@@ -87,8 +83,8 @@ class LearningRoute extends Component {
         <NextWordPage
           previousWord={this.context.previousWord}
           nextWord={this.context.nextWord}
-          userResponse={this.state.userResponse}
           totalScore={this.context.totalScore}
+          userResponse={this.state.userResponse}
           wordCorrectCount={this.context.wordCorrectCount}
           wordIncorrectCount={this.context.wordIncorrectCount}
           handleSubmitAnswer={this.handleSubmitAnswer}

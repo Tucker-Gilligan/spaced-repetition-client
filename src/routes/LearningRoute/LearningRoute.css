@@ -83,6 +83,7 @@
   border-radius: 1.3rem;
   height: 3.5rem;
   font-size: 120%;
+  cursor: pointer;
 }
 
 .word__stats {
